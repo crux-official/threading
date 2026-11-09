@@ -1,17 +1,7 @@
-# The threading concern's header-only contract (static + dynamic renderings):
-# the PRIMITIVE — the opaque CruxThread handle + Thread_Create/Join/Detach +
-# the hardware facts (logical/physical core counts, the concurrency ceiling),
-# exactly the way a memory concern wraps malloc. The POOL (worker set + queue
-# + batch barrier) is NOT here — it is the thread_pool standalone extension
-# (backlog 0037), one layer up on this primitive. The concern is dispatched
-# through the engine's registry channel (the driver's served ThreadingAPI,
-# selected by the concern's stable dispatch id); the 1:1 concern bijection
-# says this interface is driven by exactly one implementation in every cell
-# that composes it.
-format_version = 1
+format_version = 2
 name   = "threading"
 kind   = "interface"
-version        = "1.0.0"
-implements_api = "1.0.0"
-requires = []
+version = "2.0.0"
+api_level = "1.0.0"
+concern   = "threading"
 renderings = ["static", "dynamic"]
